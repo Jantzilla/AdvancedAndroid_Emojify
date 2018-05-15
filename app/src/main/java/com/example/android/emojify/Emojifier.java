@@ -58,7 +58,12 @@ class Emojifier {
             Toast.makeText(context, R.string.no_faces_message, Toast.LENGTH_SHORT).show();
         }
 
-        // TODO (2): Iterate through the faces, calling getClassifications() for each face.
+        // COMPLETED (2): Iterate through the faces, calling getClassifications() for each face.
+        for (int i = 0; i < faces.size(); ++i) {
+            Face face = faces.valueAt(i);
+            getClassifications(face,i);
+
+        }
 
         // Release the detector
         detector.release();
